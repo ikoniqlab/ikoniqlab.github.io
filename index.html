@@ -7,22 +7,42 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body { background-color: #0f0f11; color: #ffffff; font-family: sans-serif; }
-        .navbar-brand img { max-height: 180px; }
+        .navbar-brand img { max-height: 80px; }
         .card { background-color: #1a1a1e; border: 1px solid #2d2d35; border-radius: 12px; overflow: hidden; }
         .card-img-top { height: 350px; object-fit: cover; }
         .price { color: #00ff88; font-weight: bold; font-size: 1.4rem; }
         .btn-whatsapp { background-color: #25d366; color: #fff; font-weight: 600; border-radius: 8px; border: none; }
         .btn-whatsapp:hover { background-color: #1eb954; color: #fff; }
+        .nav-link { color: #ffffff !important; font-weight: 500; }
+        .nav-link:hover { color: #00ff88 !important; }
     </style>
 </head>
 <body>
 
-    <!-- Logo -->
-    <nav class="navbar navbar-dark bg-black py-3 border-bottom border-secondary">
-        <div class="container justify-content-center">
-            <a class="navbar-brand d-flex align-items-center gap-2" href="#">
+    <!-- Barra de navegación con botón de 3 barritas -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-black py-3 border-bottom border-secondary">
+        <div class="container">
+            <!-- Logo -->
+            <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
                 <img src="logo.png" alt="ikoniq.lab logo" onerror="this.style.display='none'">
             </a>
+
+            <!-- Botón de 3 barritas -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal" aria-controls="menuPrincipal" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Opciones del menú -->
+            <div class="collapse navbar-collapse" id="menuPrincipal">
+                <ul class="navbar-nav ms-auto d-flex gap-3 list-unstyled m-0 py-2 py-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="anime.html">Anime</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="musica.html">Música & Estilos</a>
+                    </li>
+                </ul>
+            </div>
         </div>
     </nav>
 
@@ -35,7 +55,6 @@
     <!-- Catálogo -->
     <div class="container mb-5">
         <div class="row g-4">
-
             <!-- POLERA 1: JIRAYA -->
             <div class="col-12 col-sm-6 col-md-4">
                 <div class="card h-100 shadow">
@@ -48,8 +67,6 @@
                 </div>
             </div>
 
-       
-
             <!-- POLERA 3: DEMONSLAYER 3 -->
             <div class="col-12 col-sm-6 col-md-4">
                 <div class="card h-100 shadow">
@@ -61,9 +78,10 @@
                     </div>
                 </div>
             </div>
-
         </div>
     </div>
 
+    <!-- Script para activar la animación de las 3 barritas -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
