@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IKONIQ LAB</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body { background-color: #0d0d0d; color: #fff; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        .navbar { background-color: #000; border-bottom: 1px solid #222; }
+        .price { color: #ff3333; font-weight: bold; font-size: 1.2rem; }
+        .btn-whatsapp { background-color: #25d366; color: white; font-weight: bold; }
+        .btn-whatsapp:hover { background-color: #1eb855; color: white; }
+        .card { background-color: #161616; border: 1px solid #282828; color: white; }
+    </style>
+</head>
+<body>
+
+    <!-- Menú de navegación -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold text-danger fs-3" href="#">IKONIQ LAB</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" href="#">INICIO</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#catalogo">CATÁLOGO</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Sección Hero (Portada) -->
+    <div class="hero-section text-white pt-5 pb-4 mb-5" style="background: url('FONDOHUMO.jpg') no-repeat center center / cover;">
+        <div class="container py-4">
+            <div class="row align-items-center">
+                <div class="col-12 col-md-6 text-center text-md-start mb-4 mb-md-0">
+                    <h1 class="display-2 fw-bold mb-0">EXPRESA TU</h1>
+                    <h1 class="display-2 fw-bold text-danger mb-4">PASIÓN</h1>
+                    <p class="lead text-secondary mb-4">Poleras y polerones inspirados en anime, cultura y estilo urbano.</p>
+                    <a href="#catalogo" class="btn btn-danger btn-lg px-5 py-3 fw-bold rounded-pill shadow-lg">VER COLECCIÓN ></a>
+                </div>
+                <div class="col-12 col-md-6 text-center">
+                    <img src="POLERONMETÁLICA.png" alt="Polerón Destacado" class="img-fluid" style="max-height: 450px;">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Catálogo -->
+    <div id="catalogo" class="container mb-5">
+        <h2 class="text-center fw-bold mb-4">NUESTROS PRODUCTOS</h2>
+        <div class="row g-4">
+            <!-- POLERA JIRAYA -->
+            <div class="col-12 col-sm-6 col-md-4">
+                <div class="card h-100 shadow text-center p-3">
+                    <img src="POLERAJIRAYA.png" class="card-img-top img-fluid" alt="Polera Jiraya">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title fw-bold">Polera Jiraya</h5>
+                        <p class="price my-2">$14.990</p>
+                        <a href="https://wa.me/56945469504?text=Hola%20ikoniq.lab,%20quiero%20pedir%20la%20Polera%20Jiraya" target="_blank" class="btn btn-whatsapp py-2 mt-auto">Pedir por WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- POLERÓN METALLICA -->
+            <div class="col-12 col-sm-6 col-md-4">
+                <div class="card h-100 shadow text-center p-3">
+                    <img src="POLERONMETÁLICA.png" class="card-img-top img-fluid" alt="Polerón Metallica">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title fw-bold">Polerón Metallica</h5>
+                        <p class="price my-2">$24.990</p>
+                        <a href="https://wa.me/56945469504?text=Hola%20ikoniq.lab,%20quiero%20pedir%20el%20Polerón%20Metallica" target="_blank" class="btn btn-whatsapp py-2 mt-auto">Pedir por WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- POLERA DEMON SLAYER 03 -->
+            <div class="col-12 col-sm-6 col-md-4">
+                <div class="card h-100 shadow text-center p-3">
+                    <img src="demonslayer3.jpg" class="card-img-top img-fluid" alt="Polera Demon Slayer 03">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title fw-bold">Polera Demon Slayer 03</h5>
+                        <p class="price my-2">$14.990</p>
+                        <a href="https://wa.me/56945469504?text=Hola%20ikoniq.lab,%20quiero%20pedir%20la%20Polera%20Demon%20Slayer%2003" target="_blank" class="btn btn-whatsapp py-2 mt-auto">Pedir por WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
