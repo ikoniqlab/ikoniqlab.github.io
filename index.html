@@ -40,6 +40,15 @@
             background-color: #161616;
             border: 1px solid #282828;
             color: white;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        .card:hover {
+            border-color: #ff3333;
+        }
+        /* Ocultar catálogos por defecto */
+        .catalogo-seccion {
+            display: none;
         }
     </style>
 </head>
@@ -48,7 +57,9 @@
     <!-- Menú de navegación -->
     <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
         <div class="container">
-            <a class="navbar-brand py-0" href="#"><img src="ikoniqlogo.svg" alt="IKONIQ LAB" style="height: 150px; max-height: none; object-fit: contain;"></a>
+            <a class="navbar-brand py-0" href="#">
+                <img src="ikoniqlogo.svg" alt="IKONIQ LAB" style="height: 150px; max-height: none; object-fit: contain;">
+            </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -61,31 +72,31 @@
         </div>
     </nav>
 
-   <!-- Sección de Portada (Hero) ampliada -->
-<div class="hero-section text-white pt-5 pb-5 mb-0" style="padding-bottom: 90px !important;">
-    <div class="container py-5">
-        <div class="row align-items-center">
-            <div class="col-12 col-md-6 text-center text-md-start mb-4 mb-md-0">
-                <h1 class="display-2 fw-bold mb-0 titulo-personalizado">TU DISEÑO</h1>
-                <h1 class="display-2 fw-bold text-danger mb-4 titulo-personalizado">TU ESTILO</h1>
-                <p class="lead text-secondary mb-4">Poleras y polerones inspirados en anime, cultura y estilo urbano.</p>
-                <a href="#catalogo" class="btn btn-danger btn-lg px-5 py-3 fw-bold rounded-pill shadow-lg">VER COLECCIÓN ></a>
-            </div>
-            <div class="col-12 col-md-6 text-center">
-                <img src="poleronpolera.png" alt="Portada Destacada" class="img-fluid rounded shadow-lg" style="max-height: 450px;">
+    <!-- Sección de Portada (Hero) -->
+    <div class="hero-section text-white pt-5 pb-5 mb-0" style="padding-bottom: 90px !important;">
+        <div class="container py-5">
+            <div class="row align-items-center">
+                <div class="col-12 col-md-6 text-center text-md-start mb-4 mb-md-0">
+                    <h1 class="display-2 fw-bold mb-0 titulo-personalizado">TU DISEÑO</h1>
+                    <h1 class="display-2 fw-bold text-danger mb-4 titulo-personalizado">TU ESTILO</h1>
+                    <p class="lead text-secondary mb-4">Poleras y polerones inspirados en anime, cultura y estilo urbano.</p>
+                    <a href="#catalogo" class="btn btn-danger btn-lg px-5 py-3 fw-bold rounded-pill shadow-lg">VER COLECCIÓN ></a>
+                </div>
+                <div class="col-12 col-md-6 text-center">
+                    <img src="poleronpolera.png" alt="Portada Destacada" class="img-fluid rounded shadow-lg" style="max-height: 450px;">
+                </div>
             </div>
         </div>
     </div>
-</div>
 
-<!-- Categorías Principales (Poleras y Polerones) -->
-<div id="catalogo" class="container mb-5">
-    <h2 class="text-center fw-bold mb-4">ELIGE TU CATEGORÍA</h2>
-    <div class="row g-4 mb-5">
-        <!-- Categoría Poleras (Lleva a la sección de poleras) -->
-        <div class="col-12 col-md-6 text-center">
-            <a href="#seccion-poleras" class="text-decoration-none">
-                <div class="card h-100 shadow border-danger p-3 bg-dark text-white position-relative">
+    <!-- Categorías Principales -->
+    <div id="catalogo" class="container mb-5">
+        <h2 class="text-center fw-bold mb-4">ELIGE TU CATEGORÍA</h2>
+        <div class="row g-4 mb-5">
+            
+            <!-- Botón Categoría Poleras -->
+            <div class="col-12 col-md-6 text-center">
+                <div onclick="mostrarCatalogo('poleras')" class="card h-100 shadow border-danger p-3 bg-dark text-white position-relative">
                     <img src="POLERAJIRAYA.png" class="card-img-top img-fluid rounded" alt="Categoría Poleras" style="height: 350px; object-fit: cover;">
                     <div class="card-body">
                         <h3 class="card-title fw-bold text-danger mt-2">POLERAS</h3>
@@ -93,13 +104,11 @@
                         <span class="btn btn-outline-danger px-4 fw-bold">VER POLERAS</span>
                     </div>
                 </div>
-            </a>
-        </div>
+            </div>
 
-        <!-- Categoría Polerones (Lleva a la sección de polerones) -->
-        <div class="col-12 col-md-6 text-center">
-            <a href="#seccion-polerones" class="text-decoration-none">
-                <div class="card h-100 shadow border-danger p-3 bg-dark text-white position-relative">
+            <!-- Botón Categoría Polerones -->
+            <div class="col-12 col-md-6 text-center">
+                <div onclick="mostrarCatalogo('polerones')" class="card h-100 shadow border-danger p-3 bg-dark text-white position-relative">
                     <img src="poleronpolera.png" class="card-img-top img-fluid rounded" alt="Categoría Polerones" style="height: 350px; object-fit: cover;">
                     <div class="card-body">
                         <h3 class="card-title fw-bold text-danger mt-2">POLERONIS</h3>
@@ -107,60 +116,80 @@
                         <span class="btn btn-outline-danger px-4 fw-bold">VER POLERONES</span>
                     </div>
                 </div>
-            </a>
-        </div>
-    </div>
-
-    <!-- SECCIÓN 1: POLERAS -->
-    <div id="seccion-poleras" class="mb-5 pt-4">
-        <h3 class="fw-bold text-danger mb-4 border-bottom border-secondary pb-2">CATÁLOGO DE POLERAS</h3>
-        <div class="row g-4">
-            
-            <!-- Polera Jiraya -->
-            <div class="col-12 col-sm-6 col-md-4">
-                <div class="card h-100 shadow text-center p-3">
-                    <img src="POLERAJIRAYA.png" class="card-img-top img-fluid" alt="Polera Jiraya">
-                    <div class="card-body d-flex flex-column">
-                        <h5 class="card-title fw-bold">Polera Jiraya</h5>
-                        <p class="price my-2">$14.990</p>
-                        <a href="https://wa.me/56945469504?text=Hola%20ikoniq.lab,%20quiero%20consultar%20por%20la%20Polera%20Jiraya%20($14.990)" target="_blank" class="btn btn-whatsapp py-2 mt-auto">Consultar por WhatsApp</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Pato Polera -->
-            <div class="col-12 col-sm-6 col-md-4">
-                <div class="card h-100 shadow text-center p-3">
-                    <img src="patopolera.jpg" class="card-img-top img-fluid" alt="Pato Polera" style="height: 300px; object-fit: cover;">
-                    <div class="card-body d-flex flex-column">
-                        <h5 class="card-title fw-bold">Pato Polera</h5>
-                        <p class="price my-2">$14.990</p>
-                        <a href="https://wa.me/56945469504?text=Hola%20ikoniq.lab,%20quiero%20consultar%20por%20el%20Pato%20Polera%20($14.990)" target="_blank" class="btn btn-whatsapp py-2 mt-auto">Consultar por WhatsApp</a>
-                    </div>
-                </div>
             </div>
 
         </div>
-    </div>
 
-    <!-- SECCIÓN 2: POLERONES -->
-    <div id="seccion-polerones" class="mb-5 pt-4">
-        <h3 class="fw-bold text-danger mb-4 border-bottom border-secondary pb-2">CATÁLOGO DE POLERONES</h3>
-        <div class="row g-4">
-            
-            <!-- Aquí puedes agregar tus polerones con su respectivo precio y WhatsApp -->
-            <div class="col-12 col-sm-6 col-md-4">
-                <div class="card h-100 shadow text-center p-3">
-                    <img src="poleronpolera.png" class="card-img-top img-fluid" alt="Polerón Anime" style="height: 300px; object-fit: cover;">
-                    <div class="card-body d-flex flex-column">
-                        <h5 class="card-title fw-bold">Polerón Estilo Urbano</h5>
-                        <p class="price my-2">$24.990</p>
-                        <a href="https://wa.me/56945469504?text=Hola%20ikoniq.lab,%20quiero%20consultar%20por%20el%20Polerón%20Estilo%20Urbano%20($24.990)" target="_blank" class="btn btn-whatsapp py-2 mt-auto">Consultar por WhatsApp</a>
+        <!-- SECCIÓN 1: CATÁLOGO DE POLERAS (Oculto inicialmente) -->
+        <div id="seccion-poleras" class="catalogo-seccion mb-5 pt-4">
+            <h3 class="fw-bold text-danger mb-4 border-bottom border-secondary pb-2">CATÁLOGO DE POLERAS</h3>
+            <div class="row g-4">
+                
+                <!-- Polera Jiraya -->
+                <div class="col-12 col-sm-6 col-md-4">
+                    <div class="card h-100 shadow text-center p-3">
+                        <img src="POLERAJIRAYA.png" class="card-img-top img-fluid" alt="Polera Jiraya">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title fw-bold">Polera Jiraya</h5>
+                            <p class="price my-2">$14.990</p>
+                            <a href="https://wa.me/56945469504?text=Hola%20ikoniq.lab,%20quiero%20consultar%20por%20la%20Polera%20Jiraya%20($14.990)" target="_blank" class="btn btn-whatsapp py-2 mt-auto">Consultar por WhatsApp</a>
+                        </div>
                     </div>
                 </div>
-            </div>
 
+                <!-- Pato Polera -->
+                <div class="col-12 col-sm-6 col-md-4">
+                    <div class="card h-100 shadow text-center p-3">
+                        <img src="patopolera.jpg" class="card-img-top img-fluid" alt="Pato Polera" style="height: 300px; object-fit: cover;">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title fw-bold">Pato Polera</h5>
+                            <p class="price my-2">$14.990</p>
+                            <a href="https://wa.me/56945469504?text=Hola%20ikoniq.lab,%20quiero%20consultar%20por%20el%20Pato%20Polera%20($14.990)" target="_blank" class="btn btn-whatsapp py-2 mt-auto">Consultar por WhatsApp</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
         </div>
+
+        <!-- SECCIÓN 2: CATÁLOGO DE POLERONES (Oculto inicialmente) -->
+        <div id="seccion-polerones" class="catalogo-seccion mb-5 pt-4">
+            <h3 class="fw-bold text-danger mb-4 border-bottom border-secondary pb-2">CATÁLOGO DE POLERONES</h3>
+            <div class="row g-4">
+                
+                <div class="col-12 col-sm-6 col-md-4">
+                    <div class="card h-100 shadow text-center p-3">
+                        <img src="poleronpolera.png" class="card-img-top img-fluid" alt="Polerón Anime" style="height: 300px; object-fit: cover;">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title fw-bold">Polerón Estilo Urbano</h5>
+                            <p class="price my-2">$24.990</p>
+                            <a href="https://wa.me/56945469504?text=Hola%20ikoniq.lab,%20quiero%20consultar%20por%20el%20Polerón%20Estilo%20Urbano%20($24.990)" target="_blank" class="btn btn-whatsapp py-2 mt-auto">Consultar por WhatsApp</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
     </div>
 
-</div>  
+    <!-- Script para alternar los catálogos -->
+    <script>
+        function mostrarCatalogo(tipo) {
+            // Ocultar ambas secciones primero
+            document.getElementById('seccion-poleras').style.display = 'none';
+            document.getElementById('seccion-polerones').style.display = 'none';
+
+            // Mostrar únicamente la seleccionada
+            if (tipo === 'poleras') {
+                document.getElementById('seccion-poleras').style.display = 'block';
+                document.getElementById('seccion-poleras').scrollIntoView({ behavior: 'smooth' });
+            } else if (tipo === 'polerones') {
+                document.getElementById('seccion-polerones').style.display = 'block';
+                document.getElementById('seccion-polerones').scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+    </script>
+
+</body>
+</html>
